@@ -16,6 +16,12 @@ namespace GOS
             InitializeComponent();
         }
 
+        public void showMainForm()
+        {
+            this.statusLabel.Text = "Essai";
+            Application.Run(this);
+        }
+
         private void toolStripComboBox1_Click(object sender, EventArgs e)
         {
 
@@ -25,5 +31,11 @@ namespace GOS
         {
 
         }
+
+        private void statusLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

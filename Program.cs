@@ -9,9 +9,7 @@ namespace GOS
     {
         static void Main()
         {
-            Inteface window = new Inteface();
-            window.showMainForm();
-
+            GOS main = new GOS();
         }
     }
 }

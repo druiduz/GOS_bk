@@ -10,11 +10,16 @@ namespace GOS
     {
         public GOS()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainForm window = new MainForm();
             window.showMainForm();
+            Application.Run(window);
+
+            Connexion c = new Connexion();
+            c.select();
         }
     }
 }

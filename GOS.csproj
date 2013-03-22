@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.1.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +49,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Connexion.cs" />
+    <Compile Include="Classes\Produit.cs" />
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vente.designer.cs">
+      <DependentUpon>Vente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vente_carte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vente_carte.designer.cs">
+      <DependentUpon>Vente_carte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vente_espèce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vente_espèce.designer.cs">
+      <DependentUpon>Vente_espèce.cs</DependentUpon>
     </Compile>
     <Compile Include="GOS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="Classes\Stock.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vente.resx">
+      <DependentUpon>Vente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vente_carte.resx">
+      <DependentUpon>Vente_carte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vente_espèce.resx">
+      <DependentUpon>Vente_espèce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +111,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

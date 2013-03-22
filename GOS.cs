@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GOS.Forms;
 
 namespace GOS
 {
@@ -15,10 +16,14 @@ namespace GOS
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainForm window = new MainForm();
-            window.showMainForm();
+            
+            //window.showMainForm();
             Application.Run(window);
 
-            Connexion c = new Connexion();
+            /*LoginForm loginForm = new LoginForm();
+            loginForm.Parent = window;*/
+
+            Connexion c = Connexion.getInstance();
             c.select();
         }
     }

@@ -33,7 +33,7 @@ namespace GOS
             }
         }
 
-        public ~Connexion()
+        ~Connexion()
         {
             this.CloseConnection();
         }

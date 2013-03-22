@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace GOS.Forms
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }

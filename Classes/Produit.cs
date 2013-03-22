@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using MySql.Data.MySqlClient;
 
 namespace GOS
 {
@@ -15,7 +16,7 @@ namespace GOS
 
         public Produit()
         {
-            this.ID = -1;
+            this._ID = -1;
             this.name = "undefined";
             this.quantite = 0;
             this.prix = 0.0f;
@@ -77,12 +78,54 @@ namespace GOS
 
 
             #region TODO: Connexion bdd
-            
+
+            Connexion co = Connexion.getInstance();
+
+            string query = "SELECT * FROM produit WHERE id = " + id;
+
+            MySqlCommand cmd = new MySqlCommand(query, co.connexion);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                ID = dataReader.GetInt32(0);
+                name = dataReader.GetString(1);
+                quantite = dataReader.GetInt32(2);
+                prix = dataReader.GetFloat(3);
+            }
+
+            dataReader.Close();
+
             #endregion
 
 
             Produit p = new Produit(ID, name, quantite, prix);
             return p;
+        }
+
+        public static List<Produit> getAllProduit()
+        {
+            List<Produit> lp = new List<Produit>();
+
+            #region TODO: Connexion bdd
+
+            Connexion co = Connexion.getInstance();
+
+            string query = "SELECT * FROM produit";
+
+            MySqlCommand cmd = new MySqlCommand(query, co.connexion);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                lp.Add(new Produit(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2), dataReader.GetFloat(3)));
+            }
+
+            dataReader.Close();
+
+            #endregion
+
+            return lp;
         }
 
         public static bool addProduit(Produit p)

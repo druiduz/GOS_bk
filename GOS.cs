@@ -16,15 +16,16 @@ namespace GOS
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainForm window = new MainForm();
-            
+            LoginForm loginForm = new LoginForm();
+            loginForm.MdiParent = window;
+
+            loginForm.Show();
+
             //window.showMainForm();
             Application.Run(window);
 
-            /*LoginForm loginForm = new LoginForm();
-            loginForm.Parent = window;*/
-
-            Connexion c = Connexion.getInstance();
-            c.select();
+            /*Connexion c = Connexion.getInstance();
+            c.select();*/
         }
     }
 }

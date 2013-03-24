@@ -8,6 +8,15 @@ using System.Windows.Forms;
 
 namespace GOS
 {
+
+    public class InvalidConnexion : Exception
+    {
+        public InvalidConnexion()
+        {
+            
+        }
+    }
+
     class Connexion
     {
 
@@ -21,6 +30,7 @@ namespace GOS
         private Connexion()
         {
             Initialize();
+            OpenConnection();
         }
 
         public static Connexion getInstance()
@@ -79,6 +89,7 @@ namespace GOS
                 }
                 return false;
             }
+            return false;
         }
 
         private bool CloseConnection()

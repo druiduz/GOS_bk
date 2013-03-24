@@ -84,6 +84,12 @@
     <Compile Include="Forms\Vente_carte.designer.cs">
       <DependentUpon>Vente_carte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Vente_espece.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vente_espece.designer.cs">
+      <DependentUpon>Vente_espece.cs</DependentUpon>
+    </Compile>
     <Compile Include="GOS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vente_carte.resx">
       <DependentUpon>Vente_carte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vente_espece.resx">
+      <DependentUpon>Vente_espece.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
